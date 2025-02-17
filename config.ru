@@ -3,10 +3,10 @@ require 'erb'
 
 # use Rack::RewindableInput::Middleware
 
-routes = [
-  { path: '/egg-timer', url: 'https://egg-timer-test-5531a35f62f6.herokuapp.com/' },
-  { path: '/standing-orders', url: 'https://standingorders.shedcode.co.uk/standing-orders' }
-]
+# routes = [
+#   { path: '/egg-timer', url: 'https://egg-timer-test-5531a35f62f6.herokuapp.com/' },
+#   { path: '/standing-orders', url: 'https://standingorders.shedcode.co.uk/standing-orders' }
+# ]
 
 use Rack::Timeout, service_timeout: 15  if ENV["ENV"] == "production"
 use ActionDispatch::SSL                 if ENV["ENV"] == "production"
@@ -30,18 +30,6 @@ use Rack::ReverseProxy do
   reverse_proxy '/written-answers', 'https://written-questions.herokuapp.com/written-answers'
   reverse_proxy '/psephology', 'https://electionresults.parliament.uk'
   reverse_proxy '/psephology-test', 'https://psephology-test-72dc15bebb5d.herokuapp.com'
-
-
-
-
-
-
-
-
-
-
-  # Forward the path /foo/* to http://example.com/bar/*
-  # reverse_proxy /^\/foo(\/.*)$/, 'http://example.com/bar$1', username: 'name', password: 'basic_auth_secret'
 end
 
 app = proc do |env|
