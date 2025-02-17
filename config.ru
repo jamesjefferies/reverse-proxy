@@ -30,6 +30,7 @@ use Rack::ReverseProxy do
   reverse_proxy '/written-answers', 'https://written-questions.herokuapp.com/written-answers'
   reverse_proxy '/psephology', 'https://electionresults.parliament.uk'
   reverse_proxy '/psephology-test', 'https://psephology-test-72dc15bebb5d.herokuapp.com'
+  reverse_proxy '/psephology-datasette', 'https://psephology-datasette-f3e7b1b7eb77.herokuapp.com'
 end
 
 app = proc do |env|
