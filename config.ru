@@ -26,7 +26,6 @@ use Rack::ReverseProxy do
   reverse_proxy '/mnis-prodder', 'https://mnis-prodder.herokuapp.com/mnis-prodder'
   reverse_proxy '/regnal-years', 'https://regnal-years-46ac7da1fe8b.herokuapp.com/regnal-years'
   reverse_proxy '/uk-general-elections', 'https://uk-general-elections.herokuapp.com/uk-general-elections'
-  reverse_proxy '/uk-treaties', 'https://uk-treaties.herokuapp.com/uk-treaties'
   reverse_proxy '/written-answers', 'https://written-questions.herokuapp.com/written-answers'
   reverse_proxy '/psephology', 'https://electionresults.parliament.uk'
   reverse_proxy '/psephology-test', 'https://psephology-test-72dc15bebb5d.herokuapp.com'
